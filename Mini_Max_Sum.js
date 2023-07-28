@@ -1,7 +1,7 @@
 function miniMaxSum(arr) {
     let sum = 0;
-    let min = Number.MAX_SAFE_INTEGER;
-    let max = Number.MIN_SAFE_INTEGER;
+    let min = 0;
+    let max = 0;
   
     for (let i = 0; i < arr.length; i++) {
       sum += arr[i];

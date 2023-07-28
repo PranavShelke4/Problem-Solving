@@ -1,14 +1,24 @@
 function miniMaxSum(arr) {
-
-  let sum = arr.reduce((a, b) => {
-    return a + b;
-  });
-
-  const min = sum - Math.max(...arr);
-  const max = sum - Math.min(...arr);
-
-  console.log(min + " " + max);
-
-}
-
-miniMaxSum([1,2,3,4,5])
+    let sum = 0;
+    let min = Number.MAX_SAFE_INTEGER;
+    let max = Number.MIN_SAFE_INTEGER;
+  
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i];
+  
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+  
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+  
+    const minSum = sum - max;
+    const maxSum = sum - min;
+    console.log(minSum + " " + maxSum);
+  }
+  
+  miniMaxSum([1, 3, 5, 7, 9]);
+  
